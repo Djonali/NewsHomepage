@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Outfit&family=Roboto&display=swap");
+/* SCSS variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  color: hsl(236, 13%, 42%);
+}
+
+.grid-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-gap: 0.6rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.8fr 2fr 1fr 1fr;
+  grid-template-areas: "navbar navbar navbar" "banner banner right-side" "heading info-headline right-side" "news1 news2 news3";
+}
+
+.navbar {
+  grid-area: navbar;
+}
+.navbar .main-menu {
+  display: flex;
+}
+.navbar nav ul {
+  display: flex;
+}
+.navbar nav ul li {
+  list-style: none;
+  margin: 0.5rem 1rem;
+}
+.navbar nav ul li:hover {
+  cursor: pointer;
+  color: hsl(5, 85%, 63%);
+}
+
+.banner {
+  grid-area: banner;
+}
+.banner .banner-logo {
+  width: 100%;
+  height: 100%;
+}
+
+.right-side {
+  grid-area: right-side;
+  padding: 1rem;
+  background-color: hsl(240, 100%, 5%);
+}
+.right-side div {
+  margin-bottom: 20px;
+  border-bottom: 1px solid hsl(236, 13%, 42%);
+}
+.right-side h1 {
+  color: hsl(35, 77%, 62%);
+}
+.right-side p:nth-child(1) {
+  color: white;
+  font-weight: bold;
+}
+.right-side p:nth-child(1):hover {
+  cursor: pointer;
+  color: hsl(35, 77%, 62%);
+}
+.right-side p:nth-child(2) {
+  color: hsl(236, 13%, 42%);
+  font-size: 13px;
+}
+
+.heading {
+  grid-area: heading;
+}
+.heading h1 {
+  color: black;
+  font-weight: bolder;
+}
+
+.info-headline {
+  grid-area: info-headline;
+}
+.info-headline button {
+  background-color: hsl(240, 100%, 5%);
+  color: white;
+  width: 200px;
+  border: none;
+  font-size: 12px;
+  letter-spacing: 5px;
+  padding: 10px 30px;
+  margin-top: 20px;
+}
+.info-headline button:hover {
+  background-color: hsl(5, 85%, 63%);
+  color: white;
+}
+
+.news {
+  display: flex;
+  width: 100%;
+  height: 200px;
+}
+.news img {
+  width: 40%;
+}
+.news .card-box {
+  padding: 10px;
+}
+.news .card-box h1 {
+  color: hsl(233, 8%, 79%);
+  font-weight: bold;
+}
+.news .card-box p:first-of-type {
+  color: black;
+  font-weight: bold;
+  font-size: 13px;
+}
+.news .card-box p {
+  font-size: 13px;
+}
+
+.news1 {
+  grid-area: news1;
+}
+
+.news2 {
+  grid-area: news2;
+}
+
+.news3 {
+  grid-area: news3;
+}
+
+.icon-menu {
+  display: none;
+}
+
+.toggle-menu {
+  width: 200px;
+  height: 100vh;
+  position: absolute;
+  top: 5px;
+  right: -25px;
+  z-index: 1;
+  background-color: white;
+  border: 2px solid hsl(233, 8%, 79%);
+  box-shadow: 5px 10px 18px #888888;
+  display: none;
+}
+.toggle-menu ul {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1000px) {
+  .toggle-menu {
+    display: none;
+  }
+  .icon-menu {
+    display: none;
+  }
+}
+.toggle-menu-cross {
+  position: relative;
+  top: 20px;
+  left: 145px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .grid-container {
+    grid-gap: 0.6rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.8fr 0.5fr 1fr 1.5fr 0.5fr 0.5fr 0.5fr;
+    grid-template-areas: "navbar" "banner" "heading" "info-headline" "right-side" "news1" "news2" "news3";
+  }
+  .grid-container .main-menu {
+    display: none;
+  }
+  .icon-menu {
+    display: block;
+  }
+}/*# sourceMappingURL=style.css.map */
